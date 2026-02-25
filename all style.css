@@ -1,0 +1,981 @@
+/* -------- SCROLL ANIMATION -------- */
+
+/* Hidden State */
+.reveal{
+
+  opacity:0;
+  transform:translateY(60px);
+  transition:all .8s ease;
+
+}
+
+/* Visible State */
+.reveal.active{
+
+  opacity:1;
+  transform:translateY(0);
+
+}
+
+
+/* Different animation speeds */
+
+.reveal.slow{
+ transition:1.2s ease;
+}
+
+.reveal.fast{
+ transition:.5s ease;
+}
+
+:root{
+  --bg: #0b0f14;
+  --bg-soft: #0f1620;
+  --card: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.06);
+  --text: #e8eef6;
+  --muted: #8fa3b8;
+  --accent: #4f8cff;
+  --accent-glow: rgba(79,140,255,0.35);
+  --radius: 20px;
+}
+
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(79,140,255,0.08), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(79,140,255,0.05), transparent 40%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  letter-spacing:-0.01em;
+}
+
+/* ===== MODERN PORTFOLIO HEADER ===== */
+
+header{
+
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  padding:14px 0;
+
+  backdrop-filter:blur(16px);
+
+  background:rgba(11,15,20,0.75);
+
+  border-bottom:1px solid rgba(255,255,255,0.05);
+
+}
+
+
+/* Navbar Container */
+
+nav{
+
+  max-width:1100px;
+  margin:auto;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  gap:30px;
+
+}
+
+
+/* Links */
+
+nav a{
+
+  color:var(--muted);
+
+  text-decoration:none;
+
+  font-weight:500;
+
+  font-size:15px;
+
+  padding:8px 14px;
+
+  border-radius:10px;
+
+  transition:all .25s ease;
+
+}
+
+
+/* Hover Effect */
+
+nav a:hover{
+
+  color:white;
+
+  background:rgba(79,140,255,0.15);
+
+  box-shadow:0 0 15px rgba(79,140,255,0.3);
+
+}
+
+
+/* Active Feel */
+
+nav a:active{
+
+  transform:scale(.96);
+
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width:700px){
+
+nav{
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+}
+
+nav a{
+
+  font-size:14px;
+
+  padding:8px 12px;
+
+}
+
+}
+
+
+/* Small Phones */
+
+@media (max-width:420px){
+
+nav{
+
+  gap:6px;
+
+}
+
+nav a{
+
+  font-size:13px;
+
+  padding:6px 10px;
+
+}
+
+}
+
+
+#home{
+  padding:8rem 2rem 6rem;
+  text-align:center;
+  max-width:900px;
+  margin:0 auto;
+}
+
+#home h1{
+  font-size:clamp(2.5rem,5vw,4rem);
+  font-weight:800;
+  line-height:1.1;
+  margin:0;
+}
+
+#home h1 span{
+  color:var(--accent);
+}
+
+#home p{
+  margin-top:1.5rem;
+  font-size:1.2rem;
+  color:var(--muted);
+}
+
+section{
+  max-width:1100px;
+  margin:4rem auto;
+  padding:3rem;
+  border-radius:var(--radius);
+  background:var(--card);
+  backdrop-filter: blur(20px);
+  border:1px solid var(--border);
+}
+
+.services-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:2rem;
+  margin-top:2rem;
+}
+
+.service{
+  padding:1.8rem;
+  border-radius:16px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
+  transition:all .3s ease;
+}
+
+.service:hover{
+  border-color:var(--accent);
+  box-shadow:0 0 40px var(--accent-glow);
+}
+
+.timeline{
+  display:flex;
+  flex-direction:column;
+  gap:2rem;
+  margin-top:2rem;
+}
+
+.timeline-content{
+  padding:1.8rem;
+  border-radius:16px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
+}
+
+/* -------- PROFILE PICTURE FIX -------- */
+
+.profile-pic{
+
+  width:clamp(120px, 18vw, 180px);
+  height:clamp(120px, 18vw, 180px);
+
+  border-radius:50%;
+  object-fit:cover;
+
+  margin-top:2rem;
+
+  border:3px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+  0 0 30px rgba(79,140,255,0.25);
+
+  transition:0.3s;
+
+}
+
+
+/* Hover Glow */
+
+.profile-pic:hover{
+
+ transform:scale(1.05);
+
+ box-shadow:
+ 0 0 50px rgba(79,140,255,0.45);
+
+}
+
+
+/* Tablet */
+
+@media (max-width:768px){
+
+.profile-pic{
+
+  width:140px;
+  height:140px;
+
+}
+
+}
+
+
+/* Mobile */
+
+@media (max-width:480px){
+
+.profile-pic{
+
+  width:120px;
+  height:120px;
+
+  margin-top:1.5rem;
+
+}
+
+}
+
+/* ---------------- SKILLS ---------------- */
+
+/* Container */
+.skills{
+  margin-top:2rem;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+/* Skill Name */
+.skill span{
+  font-size:14px;
+  color:var(--muted);
+  font-weight:500;
+}
+
+
+/* Bar Background */
+
+.skill-bar{
+
+  width:100%;
+  height:10px;
+
+  background:rgba(255,255,255,0.08);
+
+  border-radius:999px;
+
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+}
+
+
+/* Colored Progress Bar */
+
+.skill-level{
+
+  height:100%;
+
+  width:0;
+
+  border-radius:999px;
+
+  background:linear-gradient(
+  90deg,
+  #4f8cff,
+  #2563eb
+  );
+
+  box-shadow:
+  0 0 15px rgba(79,140,255,0.5);
+
+  transition:width 1s ease;
+
+}
+
+
+/* Skill Levels */
+
+.skill-level[data-level="90"]{ width:90%; }
+.skill-level[data-level="80"]{ width:80%; }
+.skill-level[data-level="75"]{ width:75%; }
+.skill-level[data-level="70"]{ width:70%; }
+.skill-level[data-level="65"]{ width:65%; }
+
+
+
+/* ---------- RESPONSIVE ---------- */
+
+/* Tablet */
+
+@media (max-width:768px){
+
+.skills{
+  gap:16px;
+}
+
+.skill span{
+  font-size:13px;
+}
+
+.skill-bar{
+  height:9px;
+}
+
+}
+
+
+/* Mobile */
+
+@media (max-width:480px){
+
+.skills{
+  gap:14px;
+}
+
+.skill span{
+  font-size:12px;
+}
+
+.skill-bar{
+  height:8px;
+}
+
+}
+
+
+/* Global Fix */
+
+*{
+box-sizing:border-box;
+}
+/* -------- RESUME RESPONSIVE FIX -------- */
+
+/* Resume container */
+#resume{
+  width:90%;
+  max-width:1100px;
+  margin:4rem auto;
+  padding:30px;
+}
+
+/* Timeline spacing */
+.timeline{
+  gap:20px;
+}
+
+/* Timeline items */
+.timeline-item{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+/* Date */
+.timeline-date{
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* Timeline card */
+.timeline-content{
+  padding:18px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+}
+
+/* Resume Buttons Layout */
+.resume-buttons{
+  margin-top:2.5rem;
+
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+/* Buttons */
+.resume-btn{
+  padding:12px 20px;
+  border-radius:12px;
+  background:var(--accent);
+  color:white;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  transition:0.25s;
+}
+
+.resume-btn:hover{
+  box-shadow:0 0 25px var(--accent-glow);
+  transform:translateY(-2px);
+}
+
+
+/* -------- TABLET -------- */
+
+@media (max-width:768px){
+
+#resume{
+  padding:24px;
+}
+
+.timeline-content{
+  padding:16px;
+}
+
+.resume-btn{
+  font-size:14px;
+}
+
+}
+
+
+/* -------- MOBILE -------- */
+
+@media (max-width:480px){
+
+#resume{
+  width:95%;
+  padding:20px;
+}
+
+/* Stack buttons */
+.resume-buttons{
+  flex-direction:column;
+}
+
+/* Full width buttons */
+.resume-btn{
+  width:100%;
+  text-align:center;
+}
+
+.timeline-date{
+  font-size:12px;
+}
+
+.timeline-content h3{
+  font-size:16px;
+}
+
+}
+/* ---------------- CONTACT ---------------- */
+
+#contact{
+  max-width:1100px;
+  margin:6rem auto;
+  padding:3rem;
+  border-radius:20px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+  backdrop-filter:blur(20px);
+}
+
+.contact-container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+  align-items:center;
+}
+
+/* Left Side */
+
+.contact-text h2{
+  font-size:2rem;
+  margin:0;
+}
+
+.contact-text p{
+  margin-top:1rem;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.contact-links{
+  margin-top:2rem;
+  display:flex;
+  flex-direction:column;
+  gap:0.8rem;
+}
+
+.contact-links a{
+  color:#6ea8ff;
+  text-decoration:none;
+  font-weight:500;
+  transition:opacity .2s ease;
+}
+
+.contact-links a:hover{
+  opacity:0.8;
+}
+
+/* Form */
+
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding:1rem 1.2rem;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.04);
+  color:var(--text);
+  font-size:1rem;
+  transition:all .3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  outline:none;
+  border-color:#4f8cff;
+  box-shadow:0 0 25px rgba(79,140,255,0.3);
+}
+
+.contact-form button{
+  margin-top:0.5rem;
+  padding:1rem;
+  border-radius:14px;
+  border:none;
+  background:#4f8cff;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:all .3s ease;
+}
+
+.contact-form button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 30px rgba(79,140,255,0.4);
+}
+
+/* Responsive */
+
+@media (max-width:900px){
+  .contact-container{
+    grid-template-columns:1fr;
+    gap:3rem;
+  }
+}
+
+/* Button loader */
+.btn-loader{
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,0.4);
+  border-top-color:#fff;
+  display:none;
+  animation:spin .8s linear infinite;
+}
+
+button.loading .btn-text{
+  display:none;
+}
+
+button.loading .btn-loader{
+  display:inline-block;
+}
+
+/* Success message */
+.form-success{
+  margin-top:1rem;
+  color:#4f8cff;
+  font-weight:500;
+  display:none;
+}
+
+.form-success.show{
+  display:block;
+}
+
+@keyframes spin{
+  to{transform:rotate(360deg);}
+}
+
+/* Contact Section Container (Same as Cards) */
+.contact-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(30,41,59,0.6),
+    rgba(15,23,42,0.6)
+  );
+
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Title */
+.contact-section h2{
+  margin-bottom:20px;
+  font-size:20px;
+  color:white;
+}
+
+/* Fields */
+.field{
+  margin-bottom:18px;
+}
+
+/* Labels */
+.field label{
+  display:block;
+  margin-bottom:6px;
+  font-size:13px;
+  color:#9ca3af;
+}
+
+/* Inputs */
+.field input,
+.field textarea{
+
+  width:100%;
+  padding:14px;
+
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.08);
+
+  background:rgba(0,0,0,0.25);
+  color:white;
+
+  font-size:14px;
+  outline:none;
+
+  transition:0.25s;
+}
+
+/* Focus Glow */
+.field input:focus,
+.field textarea:focus{
+
+  border:1px solid #3b82f6;
+
+  box-shadow:
+  0 0 10px rgba(59,130,246,0.4);
+}
+
+/* Textarea */
+.field textarea{
+  height:140px;
+  resize:none;
+}
+
+/* Button */
+#button{
+
+  margin-top:10px;
+  padding:12px 26px;
+
+  border-radius:8px;
+  border:none;
+
+  background:linear-gradient(
+  90deg,
+  #3b82f6,
+  #2563eb
+  );
+
+  color:white;
+  font-size:14px;
+
+  cursor:pointer;
+
+  transition:0.25s;
+}
+
+/* Hover */
+#button:hover{
+
+ transform:translateY(-2px);
+
+ box-shadow:
+ 0 10px 25px rgba(59,130,246,0.5);
+
+}
+
+/* -------- CONTACT RESPONSIVE FIX -------- */
+
+.contact-section{
+  width:90%;
+  max-width:900px;
+  margin:40px auto;
+  padding:25px;
+}
+
+/* Inputs scale correctly */
+.field input{
+  width:100%;
+  box-sizing:border-box;
+}
+
+/* Mobile Layout */
+@media (max-width:768px){
+
+  .contact-section{
+    width:92%;
+    padding:20px;
+  }
+
+  .field input{
+    padding:12px;
+    font-size:14px;
+  }
+
+  #button{
+    width:100%;
+    padding:14px;
+  }
+
+}
+
+/* Small Phones */
+@media (max-width:480px){
+
+  .contact-section{
+    width:95%;
+    padding:18px;
+  }
+
+  .contact-section h2{
+    font-size:18px;
+  }
+
+}
+
+/* -------- CONTACT HEADER FIX + ANIMATION -------- */
+
+/* Contact Title */
+
+.contact-section h2{
+
+  font-size:clamp(22px, 3vw, 28px);
+
+  text-align:center;
+
+  margin-bottom:25px;
+
+  letter-spacing:1px;
+
+  position:relative;
+
+  animation:fadeUp 1s ease;
+
+}
+
+
+/* Animated underline */
+
+.contact-section h2::after{
+
+  content:"";
+
+  width:80px;
+  height:3px;
+
+  background:linear-gradient(
+  90deg,
+  transparent,
+  #4f8cff,
+  transparent
+  );
+
+  display:block;
+
+  margin:10px auto 0;
+
+  border-radius:10px;
+
+  animation:lineGrow 1.2s ease;
+
+}
+
+
+
+/* Smooth Form Animation */
+
+.contact-section{
+
+ animation:fadeUp 1s ease;
+
+}
+
+
+/* Field animation */
+
+.field{
+
+ animation:fadeUp 1.2s ease;
+
+}
+
+
+/* Button animation */
+
+#button{
+
+ animation:fadeUp 1.4s ease;
+
+}
+
+
+
+/* -------- KEYFRAMES -------- */
+
+@keyframes fadeUp{
+
+ from{
+
+ opacity:0;
+ transform:translateY(30px);
+
+ }
+
+ to{
+
+ opacity:1;
+ transform:translateY(0);
+
+ }
+
+}
+
+
+@keyframes lineGrow{
+
+ from{
+
+ width:0;
+
+ }
+
+ to{
+
+ width:80px;
+
+ }
+
+}
+
+.contact-section:hover{
+
+ box-shadow:
+ 0 0 40px rgba(79,140,255,0.25);
+
+ transition:.4s;
+
+}
+
+/* -------- SCROLL ANIMATION -------- */
+
+/* Hidden State */
+.reveal{
+
+  opacity:0;
+  transform:translateY(60px);
+  transition:all .8s ease;
+
+}
+
+/* Visible State */
+.reveal.active{
+
+  opacity:1;
+  transform:translateY(0);
+
+}
+
+
+/* Different animation speeds */
+
+.reveal.slow{
+ transition:1.2s ease;
+}
+
+.reveal.fast{
+ transition:.5s ease;
+}
+
