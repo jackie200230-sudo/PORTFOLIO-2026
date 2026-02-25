@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jackie Russell — Portfolio</title>
+<link rel="stylesheet" href="all style.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" aria-labelledby="home-heading">
+      <h1 id="home-heading">Welcome to My Portfolio</h1>
+      <p class="lead">A minimal and modern showcase of my work and skills.</p>
+      <img src="/images/me.jpg" alt="Profile picture" class="profile-pic" />
+    </section>
+
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
+      <p class="lead">I’m a creator who values clarity, usability, and thoughtful design. I build clean websites and meaningful digital experiences that help people connect with ideas.</p>
+    </section>
+
+    <section id="services" aria-labelledby="services-heading">
+      <h2 id="services-heading">Services</h2>
+      <div class="services-list">
+        <div class="service"><h3>🎨 Web Design</h3><p>Clean, responsive designs tailored to your brand.</p></div>
+        <div class="service"><h3>💻 Web Development</h3><p>Modern, accessible, and maintainable front-end development.</p></div>
+        <div class="service"><h3>🖌️ UI/UX</h3><p>Interfaces that are intuitive and delightful to use.</p></div>
+        <div class="service"><h3>📊 Consulting</h3><p>Strategy and technical guidance to move projects forward.</p></div>
+        <div class="service"><h3>✨ Creative Projects</h3><p>Interactive portfolios and small web experiments.</p></div>
+        <div class="service"><h3>🔧 Maintenance</h3><p>Ongoing updates, performance tuning, and support.</p></div>
+      </div>
+    </section>
+
+    <section id="resume" aria-labelledby="resume-heading">
+      <h2 id="resume-heading">Resume</h2>
+      <p class="lead">Download my resume or view highlights below.</p>
+
+      <div class="timeline" aria-hidden="false">
+        <div class="timeline-item">
+          <div class="timeline-date">2018 — 2022</div>
+          <div class="timeline-content"><h3>🎓 BSc Computer Science</h3><p>XYZ University — web technologies, software engineering, UX.</p></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2022 — 2024</div>
+          <div class="timeline-content"><h3>💼 Front-End Developer</h3><p>ABC Company — responsive sites and design collaboration.</p></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2024 — Present</div>
+          <div class="timeline-content"><h3>🚀 Freelance Designer & Developer</h3><p>Building minimal, effective websites for small businesses and creatives.</p></div>
+        </div>
+      </div>
+
+      <div class="skills" aria-hidden="false">
+        <h3>Skills</h3>
+        <div class="skill"><span>HTML &amp; CSS</span><div class="skill-bar"><div class="skill-level" data-level="90"></div></div></div>
+        <div class="skill"><span>JavaScript</span><div class="skill-bar"><div class="skill-level" data-level="80"></div></div></div>
+        <div class="skill"><span>UI/UX</span><div class="skill-bar"><div class="skill-level" data-level="75"></div></div></div>
+        <div class="skill"><span>React</span><div class="skill-bar"><div class="skill-level" data-level="70"></div></div></div>
+        <div class="skill"><span>WordPress</span><div class="skill-bar"><div class="skill-level" data-level="65"></div></div></div>
+      </div>
+
+      <div class="resume-buttons" role="group" aria-label="Resume actions">
+        <a class="resume-btn" href="FREEDOM.pdf" download>📄 Download Resume</a>
+        <a class="resume-btn view-btn" href="FREEDOM.pdf" target="_blank" rel="noopener">👁️ View Resume</a>
+      </div>
+    </section>
+
+<section id="contact" class="contact-section" aria-labelledby="contact-heading">
+
+<h2>Contact</h2>
+<form id="form">
+  <div class="field">
+    <label for="name">name</label>
+    <input type="text" name="name" id="name">
+  </div>
+
+  <div class="field">
+    <label for="email">email</label>
+    <input type="text" name="email" id="email">
+  </div>
+
+ <div class="field">
+    <label for="message">message</label>
+    <input type="text" name="message" id="message">
+  </div>
+
+
+<input type="submit" id="button" value="Send Email" >
+</button>
+</form>
+
+
+
+</section>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('Utcu3fYNOwDgwJ-w3')
+</script>
+
+<script src="script for contact.js"></script>
